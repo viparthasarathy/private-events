@@ -1,4 +1,4 @@
-<h1><%= @event.title %> by <%= @creator.name %></h1>
+<h1><%= @event.title %> by <%= link_to "#{@creator.name}", user_path(@creator[:id]) %></h1>
 
 <p> <%= @event.description %> </p>
 <p>		<%= @event.date.strftime("%B %d, %Y") %> at <%= @event.date.strftime("%I:%M %p") %>
@@ -6,6 +6,6 @@
 
 <h3> Attendees </h3>
 <% @attendees.each do |attendee| %>
-	<%= attendee.name %>
+	<%= link_to "#{attendee.name}", user_path(attendee[:id]) %>
 <% end %>
 
