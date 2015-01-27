@@ -1,13 +1,20 @@
-<% if signed_in? %>
-	<ul>
-		<li><%= link_to "#{current_user.name}", current_user %></li>
-		<li><%= link_to "Users", users_path %></li>
-		<li><%= link_to "Events", events_path %></li>
-		<li><%= link_to "Sign Out", signout_path, method: "delete" %></li>
-	</ul>
-<% else %>
-	<ul>
-		<li><%= link_to "Sign In", signin_path %></li>
-		<li><%= link_to "Sign Up", signup_path %></li>
-	</ul>
-<% end %>
+<header class="navbar navbar-fixed-top navbar-inverse">
+	<div class="container">
+		<% if signed_in? %>
+		<nav>
+
+			<ul class ="nav navbar-nav navbar-right">
+				<li><%= link_to "#{current_user.name}", current_user %></li>
+				<li><%= link_to "Users", users_path %></li>
+				<li><%= link_to "Events", events_path %></li>
+				<li><%= link_to "Sign Out", signout_path, method: "delete" %></li>
+			</ul>
+		<% else %>
+			<ul class="nav navbar-nav navbar-right">
+				<li><%= link_to "Sign In", signin_path %></li>
+				<li><%= link_to "Sign Up", signup_path %></li>
+			</ul>
+		<% end %>
+		</nav>
+	</div>
+</header>
