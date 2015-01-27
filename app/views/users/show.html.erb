@@ -1,16 +1,26 @@
 <h1> Welcome! </h1>
 <h2> <%= @user.name %> </h2> 
  <h3> <%= @user.email %> </h3>
- <ul>
+
 
 <h4> Created Events </h4>
+ <ul>
 <% @created_events.each do |created_event| %>
 <li>	<%= created_event.title %> </li>
 <% end %>
 </ul>
+
+
+<h4> Upcoming Events </h4>
 <ul>
-<h4> Attended Events </h4>
-<% @attended_events.each do |attended_event| %>
-<li> <%= attended_event.title %> </li>
+<% @upcoming_events.each do |upcoming_event| %>
+<li> <%= upcoming_event.title %> </li>
+<% end %>
+</ul>
+
+<h4> Previous Events </h4>
+<ul>
+<% @prev_events.each do |prev_event| %>
+<li> <%= prev_event.title %> </li>
 <% end %>
 </ul>
