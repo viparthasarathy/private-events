@@ -1,15 +1,15 @@
 <h2>Upcoming</h2>
 <% @upcoming.each do |upcoming_event| %>
-<h3> <%= upcoming_event.title %> </h3>
-<h4> by <%= upcoming_event.creator.name %></h3>
+<h3> <%= link_to "#{upcoming_event.title}", event_path(upcoming_event[:id]) %> </h3>
+<h4> by <%= link_to "#{upcoming_event.creator.name}", user_path(upcoming_event.creator[:id]) %></h3>
 	<h4> <%= upcoming_event.date.strftime("%B %d, %Y") %> at <%= upcoming_event.date.strftime("%I:%M %p") %> </h4>
 <h5> <%= upcoming_event.attendees.count %> attending. </h5>
 <% end %>
 
 <h2>Past</h2>
 <% @past.each do |past_event| %>
-<h3> <%= past_event.title %> </h3>
-<h4> by <%= past_event.creator.name %></h4>
+<h3> <%= link_to "#{past_event.title}", event_path(past_event[:id]) %> </h3>
+<h4> by <%= link_to "#{past_event.creator.name}", user_path(past_event.creator[:id]) %></h4>
 <h4> <%= past_event.date.strftime("%B %d, %Y") %> at <%= past_event.date.strftime("%I:%M %p") %> </h4>
 <h5> <%= past_event.attendees.count %> attended. </h5>
 <% end %>
