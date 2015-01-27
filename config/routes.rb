@@ -4,4 +4,6 @@ Rails.application.routes.draw do
   post 'signin' => 'sessions#create'
   delete 'signout' => 'sessions#destroy'
   resources :users
+  resources :events
+  root 'sessions#new'
 end

@@ -9,7 +9,7 @@ class UsersController < ApplicationController
 		@user = User.new(user_params)
 		if @user.save
 			flash[:success] = "You have created a new User."
-			sign_in(@user)
+			sign_in @user
 		else
 			flash.now[:danger] = "Invalid parameters."
 			render 'new'  
@@ -18,6 +18,8 @@ class UsersController < ApplicationController
 
 	def show
 		@user = User.find(params[:id])
+		@created_events = @user.created_events.all
+		@attended_events = @user.attended_events.all
 	end
 	
 	private
