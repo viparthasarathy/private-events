@@ -5,5 +5,6 @@ Rails.application.routes.draw do
   delete 'signout' => 'sessions#destroy'
   resources :users
   resources :events
+  resources :invites
   root 'sessions#new'
 end

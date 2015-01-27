@@ -1,3 +1,9 @@
+<% unless @event.attendees.include?(current_user) %>
+	<%= form_for(current_user.invites.build(attended_event_id: @event.id)) do |f| %>
+		  <%= f.hidden_field :attended_event_id, :value => @event.id %>
+			<%= f.submit "Attend Event" %>
+	<% end %>
+<% end %>
 <h1><%= @event.title %> by <%= link_to "#{@creator.name}", user_path(@creator[:id]) %></h1>
 
 <p> <%= @event.description %> </p>
