@@ -1,15 +1,21 @@
-<%= form_for(@event) do |f| %>
-	<%= f.label :title %>
-	<%= f.text_field :title %>
+<h1> Event Creation </h1>
 
-	<%= f.label :description %>
-	<%= f.text_area :description %>
+<div class="row">
+	<div class="col-md-6 col-md-offset-3">
 
-	<%= f.label :date %>
-	<%= f.datetime_select :date, :order => [:month, :day, :year] %>
+		<%= form_for(@event) do |f| %>
+			<%= f.label :title %>
+			<%= f.text_field :title %>
 
-	<%= f.submit "Create Event" %>
+			<%= f.label :description %>
+			<%= f.text_area :description %>
+
+			<%= f.label :date %>
+			<%= f.datetime_select :date, :order => [:month, :day, :year] %>
+
+			<%= f.submit "Create Event", class: "btn btn-success"%>
 
 
-<% end %>
-s
+		<% end %>
+	</div>
+</div>

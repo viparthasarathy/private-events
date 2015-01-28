@@ -1,5 +1,16 @@
-<h1> Users List </h1>
-
+<h1> All Users </h1>
+<table class = "table table-striped">
+	<thead>
+		<tr>
+			<td class="col-sm-3">Name</td>
+			<td class="col-sm-3">Email</td>
+		</tr>
+	</thead>
 <% @users.each do |user| %>
-	<p> <%= link_to "#{user.name}", user_path(user[:id])%> </p>
+<tr>
+
+	<td> <%= link_to "#{user.name}", user_path(user[:id])%> </td>
+	<td> <%= user.email %> </td>
+</tr>
 <% end %>
+</table>

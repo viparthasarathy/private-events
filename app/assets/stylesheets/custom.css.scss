@@ -50,6 +50,11 @@ h2 {
   color: $gray-light;
 }
 
+h4 {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
 p {
   font-size: 1.1em;
   line-height: 1.7em;
@@ -64,4 +69,8 @@ input, textarea, select, .uneditable-input {
 
 input {
 	height: auto !important;
+}
+
+tr {
+  text-align: center;
 }

@@ -1,0 +1,25 @@
+<table class="table">
+	<thead>
+		<tr>
+			<td class="col-sm-3">Title</td>
+			<td class="col-sm-4">Date </td>
+			<td class="col-sm-3">Host </td>
+		</tr>
+	</thead>
+ <ul>
+<% if object.empty? %>
+<tr>
+	<td> None </td>
+	<td> None </td>
+	<td> None </td>
+</tr>
+<% else %>
+	<% object.each do |event| %>
+	<tr>
+		<td> <%= link_to "#{event.title}", event_path(event) %></td>
+		<td> <%= event.date.strftime("%B %d, %Y") %></td>
+		<td> <%= link_to "#{event.creator.name}", user_path(event.creator) %> </td>
+	</tr>
+	<% end %>
+<% end %>
+</table>
