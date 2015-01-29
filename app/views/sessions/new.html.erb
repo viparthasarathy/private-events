@@ -5,7 +5,7 @@
 		<%= form_for(:session, url: signin_path) do |f| %>
 
 			<%= f.label :name %>
-			<%= f.text_field :name %>
+			<%= f.text_field :name, placeholder: "Mike" %>
 
 			<%= f.submit "Sign In", class: "btn btn-success" %>
 
